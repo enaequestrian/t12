@@ -1,0 +1,21 @@
+<script>
+let szam=Number(prompt("add meg a vizsgalt szamot: "));
+let oszto=Number(prompt("add meg az osztot: "));
+
+if (szam%oszto==0) {
+	document.write(`A(z) ${szam} -nak a(z) ${oszto} osztoja`);
+    }
+    
+else {
+	document.write(`A(z) ${szam} -nak a(z) ${oszto} NEM osztoja`);
+}
+
+
+
+
+
+
+
+
+
+</script>

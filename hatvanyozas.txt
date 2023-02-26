@@ -1,0 +1,7 @@
+<script>
+
+let a=prompt(`add meg az alap szamot: `);
+let b=prompt(`add meg a hatvanyt: `);
+let c=Math.pow(a, b);
+document.write (` a ${a} szam ${b} hatvanyra emelve: ${c}`);
+</script>

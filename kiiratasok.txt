@@ -1,0 +1,9 @@
+<script>
+
+document.write(`Laczi Eniko `);
+document.write(`<br>team12`);
+document.write(`<br>HTML: 94%`);
+document.write(`<br>CSS: 94%`);
+document.write(`<br>Javascript: 95%`);
+
+</script>

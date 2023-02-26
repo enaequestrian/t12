@@ -1,0 +1,31 @@
+<script>
+let x=prompt("Add meg az X tengely erteket: ");
+let y=prompt("Add meg az Y tengely erteket: ");
+
+
+if(x>0 && y>0){
+	document.write(`a ${x} ertekben X tengelyen elhelyezkedo es ${y} ertekben Y tengelyen elhelyezkedo pont a kordinata rendszer elso negyedeben talalhato`);
+}
+
+else if(x<0 && y>0){
+	document.write(`a ${x} ertekben X tengelyen elhelyezkedo es ${y} ertekben Y tengelyen elhelyezkedo pont a kordinata rendszer masodik negyedeben talalhato`);
+}
+
+else if(x<0 && y<0){
+	document.write(`a ${x} ertekben X tengelyen elhelyezkedo es ${y} ertekben Y tengelyen elhelyezkedo pont a kordinata rendszer harmadik negyedeben talalhato`);
+}
+
+else if(x>0 && y<0){
+	document.write(`a ${x} ertekben X tengelyen elhelyezkedo es ${y} ertekben Y tengelyen elhelyezkedo pont a kordinata rendszer negyedik negyedeben talalhato`);
+}
+
+else if(x==0 && y==0){
+	document.write(`a ${x} ertekben X tengelyen elhelyezkedo es ${y} ertekben Y tengelyen elhelyezkedo pont a kordinata rendszer Origojan talalhato`);
+}
+else if(x==0){
+	document.write(`a ${x} ertekben X tengelyen elhelyezkedo es ${y} ertekben Y tengelyen elhelyezkedo pont a kordinata rendszer Y tengelyen talalhato`);
+}
+else if(y==0){
+	document.write(`a ${x} ertekben X tengelyen elhelyezkedo es ${y} ertekben Y tengelyen elhelyezkedo pont a kordinata rendszer X tengelyen talalhato`);
+}
+</script>

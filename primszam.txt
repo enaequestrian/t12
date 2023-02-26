@@ -1,0 +1,16 @@
+<script>
+let Szam=prompt("add meg a vizsgalt szamot");
+
+let oszto=0;
+for (let i=1; i<=Szam; i++){
+	if (Szam%i==0){
+	oszto++;
+	}
+}
+if (oszto==2){
+document.write(`A ${Szam} prim szam`);
+}
+else {
+document.write(`A ${Szam} NEM prim`);
+}
+</script>

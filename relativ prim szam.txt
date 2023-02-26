@@ -1,0 +1,18 @@
+<script>
+let Szam1=prompt("adj meg az elso szamot");
+let Szam2=prompt("adj meg a masodik szamot");
+let lnko=1;
+for (let i=2; i<=Szam1; i++){
+	if (Szam1%i==0 && Szam2%i==0){
+	lnko=i;
+	}
+}
+document.write(`A ${Szam1} es a ${Szam2} legnagyobb kozos osztoja ${lnko} <br>`);
+
+if (lnko==1){
+document.write(`A ${Szam1} es a ${Szam2} relativ prim szam`);
+}
+else {
+document.write(`A ${Szam1} es a ${Szam2} NEM relativ prim`);
+}
+</script>

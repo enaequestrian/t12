@@ -1,0 +1,53 @@
+<script>
+
+let also=Number(prompt(`add meg az also hatart: `));
+let felso=Number(prompt(`add meg a felso hatart: `));
+//Math.round - general kerek szamot
+//Math.random - general random szamot
+let generalt=Math.round(Math.random()*(felso-also))+also;
+
+if (generalt%2==0) {
+	document.write(`A ${also} also es ${felso} felso hatar kozott generalt szam ${generalt} paros`);
+   }
+   
+else if (generalt!=felso) {
+	document.write(`A ${also} also es ${felso} felso hatar kozott generalt szam ${generalt+1} paros`);
+}
+else {
+	document.write(`A ${also} also es ${felso} felso hatar kozott generalt szam ${generalt-1} paros`);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

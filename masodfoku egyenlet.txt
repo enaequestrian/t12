@@ -1,0 +1,27 @@
+<script>
+let a=Number(prompt("Add meg az negyzetes ta ereket: "));
+let b=Number(prompt("Add meg az x-es tag ereket: "));
+let c=Number(prompt("Add meg az egesz szam ereket: "));
+ if (a == 0){
+ document.write(`ezek az ertekek alapjan az egyenlet nem masodfoku!`);
+ }
+ 
+ else {
+ let d=(b*b)-(4*a*c);
+ 	if(d<0){
+    document.write(`az egyenletnek nincs megoldasa`);
+    }
+    else if(d==0) {
+    let x1=-b/(2*a);
+    document.write(`az engyenletnek 1 megoldasa van ${x1}`);
+    }
+    else {
+    let x2=(-b+Math.sqrt(d))/(2*a);
+    let x3=(-b-Math.sqrt(d))/(2*a);
+    document.write(`2 megoldas van: ${x2} es ${x3}`);
+    
+    }
+
+
+
+</script>

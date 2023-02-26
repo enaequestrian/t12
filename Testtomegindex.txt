@@ -1,0 +1,39 @@
+<script>
+let magassag=Number(prompt("Add meg a magassagodat m-ben: "));
+let testtomeg=Number(prompt("Add meg a test tomegedet kg-ban: "));
+let TTI=testtomeg/(magassag*magassag);
+
+if (TTI<16){
+document.write(`A ${TTI} testtomeg index alapjan te a súlyosan sovány vagy`);
+}
+
+else if (TTI<17){
+document.write(`A ${TTI} testtomeg index alapjan te a mérsékelt sovány vagy`);
+}
+
+else if (TTI<18,49){
+document.write(`A ${TTI} testtomeg index alapjan te a enyhe sovány vagy`);
+}
+
+else if (TTI<24,99){
+document.write(`A ${TTI} testtomeg index alapjan te a normális testsúlyu vagy`);
+}
+
+else if (TTI<29,99){
+document.write(`A ${TTI} testtomeg index alapjan te a túlsúlyos vagy`);
+}
+
+else if (TTI<34,99){
+document.write(`A ${TTI} testtomeg index alapjan te a I. fokú elhízásban szenvedsz`);
+}
+
+else if (TTI<39,99){
+document.write(`A ${TTI} testtomeg index alapjan te a II. fokú elhízásban szenvedsz`);
+}
+
+else if (TTI>40){
+document.write(`A ${TTI} testtomeg index alapjan te a III. fokú (SULYOS) elhízásban szenvedsz`);
+}
+
+document.write (`A ${magassag} cm es ${testtomeg} kg alapjan ennyi a testtomeg indexed: ${TTI}`);
+</script>

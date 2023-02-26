@@ -1,0 +1,19 @@
+<script>
+let jegy=prompt("Add meg a tanulo magatartas eremjegyet: ");
+
+if (jegy == 5){
+	document.write(`A tanulo magatartas jegye ${jegy}, azaz Peldas`);
+}
+
+else if (jegy == 4){
+	document.write(`A tanulo magatartas jegye ${jegy}, azaz Jo`);
+}
+
+else if (jegy == 3){
+	document.write(`A tanulo magatartas jegye ${jegy}, azaz Valtozo`);
+}
+
+else if (jegy == 2){
+	document.write(`A tanulo magatartas jegye ${jegy}, azaz Rossz`);
+}
+</script>
