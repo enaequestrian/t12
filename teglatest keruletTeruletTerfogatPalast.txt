@@ -1,0 +1,29 @@
+<script>
+//teglatest terulet kerulet felszin 
+//Téglatest felszíne: (a • b + a • c + b • c) • 2
+//Téglatest térfogata: a • b • c
+
+function TeglatestFelszin(Aoldal,Boldal,Coldal){
+	return (Aoldal*Boldal+Aoldal*Coldal+Boldal*Coldal)*2
+}
+
+function TeglatestTerfogat(Aoldal,Boldal,Coldal){
+	return (Aoldal*Boldal*Coldal)
+}
+
+function TeglatestPalast(Aoldal,Boldal,Coldal){
+	return 2*(Aoldal*Coldal+Boldal*Coldal)
+}
+
+function Testatlo(Aoldal,Boldal,Coldal){
+	return Math.round(Math.sqrt(Aoldal*Aoldal+Boldal*Boldal+Coldal*Coldal))
+}
+
+document.write("A 3 5 2 oldalu teglatest felszine= "+TeglatestFelszin(3,5,2)+"<br>");
+document.write("A 3 5 2 oldalu teglatest terfogata= "+TeglatestTerfogat(3,5,2)+"<br>");
+document.write("A 3 5 2 oldalu teglatest Palastja= "+TeglatestPalast(3,5,2)+"<br>");
+document.write("A 3 5 2 oldalu teglatest Testatloja= "+Testatlo(3,5,2)+"<br>");
+/*document.write("A 8 10 16 oldalu teglatest felszine= "+TeglatestFelszin(8,10,16)+"<br>");
+document.write("A 8 10 16 oldalu teglatest terfogata= "+TeglatestTerfogat(8,10,16)+"<br>");
+document.write("A 3 5 2 oldalu teglatest Palastja= "+TeglatestPalast(8,10,16)+"<br>");*/
+</script>

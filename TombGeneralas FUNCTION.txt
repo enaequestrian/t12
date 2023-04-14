@@ -1,0 +1,21 @@
+<script>
+//Feladat: Tömbgenerátor
+//Feladat leírása: Készíts egy függvényt ami random számogat generál, paraméterként kapott mennyiségben
+//Paraméterként kapott alsó és felsőhatár között, és ezeket egy tömbbe tölti fel, majd adja vissza az értékét.
+
+function RandomSzamGeneralas(alsoHatar,felsoHatar){
+	let RandomSzam=Math.round(Math.random()*(felsoHatar-alsoHatar))+alsoHatar;
+    return RandomSzam;
+}
+
+function TombGeneralas(meret,also,felso){
+	let tomb=[];
+    for (let i=0;i<meret;i++){
+    	tomb.push(RandomSzamGeneralas(also,felso));
+    }
+    return tomb;
+}
+
+document.write(TombGeneralas(10,90,100));
+
+</script>

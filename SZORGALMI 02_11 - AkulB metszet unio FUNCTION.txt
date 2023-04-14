@@ -1,0 +1,94 @@
+<script>
+function tombfeltolto(meret,alsoHatar,felsoHatar){
+	let tomb=[];
+    	for (let i=0;i<meret;i++){
+        	tomb.push(Math.round(Math.random()*(felsoHatar-alsoHatar))+alsoHatar);
+        }
+    return tomb;
+}
+
+
+function metszetFuggveny(tomb1,tomb2){
+let metszet=[];
+for(let i=0;i<tomb1.length;i++){
+	let vanegyezes=false;
+    for (let j=0;j<tomb2.length;j++){
+    if (tomb1[i]==tomb2[j]){
+    vanegyezes=true;
+    }
+    }
+    if (vanegyezes==true){
+    let szerepelE=false;
+    	for (let k=0;k<metszet.length;k++){
+        	if (tomb1[i]==metszet[k]){
+           szerepelE=true; 
+           }
+        }
+        if (szerepelE==false){
+        metszet.push(tomb1[i]);
+        }
+    }
+    }
+return metszet;
+}
+
+
+
+function AdottTombbolMasik(tomb1,tomb2){
+let tomb1kultomb2=[];
+for (let i=0;i<tomb1.length;i++)
+{
+	let vanEgyezes=false;
+    for(let j=0;j<tomb2.length;j++)
+    {
+    if (tomb1[i]==tomb2[j])
+    	{
+    	vanEgyezes=true;
+    	}
+     }
+    if (vanEgyezes==false)
+    	{
+    	let szerepelE=false;
+        for (let k=0;k<tomb1kultomb2.length;k++)
+        	{
+            if (tomb1[i]==tomb1kultomb2[k])
+            	{
+                szerepelE=true;
+                }
+             }
+                if (szerepelE==false)
+                	{
+                    tomb1kultomb2.push(tomb1[i]);
+                    }
+     }
+}
+   return tomb1kultomb2;
+}
+
+function UNIO(vizsgaltTomb){
+	let Unio=[];
+	for (let i=0;i<vizsgaltTomb.length;i++){
+	let szerepelE=false;
+    	for (let j=0;j<Unio.length;j++){
+    	if (vizsgaltTomb[i]==Unio[j]){
+        	szerepelE=true;
+        }
+    	}
+        if (szerepelE==false){
+        	Unio.push(vizsgaltTomb[i]);
+            }
+	}
+   return Unio;
+}
+
+
+let tombA=tombfeltolto(10,20,50);
+let tombB=tombfeltolto(15,15,80);
+document.write("Az elso tomb elemei: "+tombA.sort()+"<br>");
+document.write("Az masodik tomb elemei: "+tombB.sort()+"<br>");
+document.write("<hr>A halmazok metszete: "+metszetFuggveny(tombA,tombB).sort()+"<br>");
+document.write("<hr>A halmaz kulonbseg B halmaz: "+AdottTombbolMasik(tombA,tombB).sort()+"<br>");
+document.write("<hr>B halmaz kulonbseg A halmaz: "+AdottTombbolMasik(tombB,tombA).sort()+"<br>");
+document.write("<hr>A es B halmaz unioja: "+UNIO(tombA)+UNIO(tombB).sort()+"<br>");
+
+</script>

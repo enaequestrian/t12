@@ -1,0 +1,176 @@
+<script>
+//1. érték: Csapat neve (nev)
+//2. érték: Csapat helyezése (helyezes)
+//3. érték: Csapat helyének változása (valtozas)
+//4. érték: Csapat Pontszama (pont)
+
+const csapatAdat = [
+"Anglia;4;0;1662", 
+"Argentína;10;0;1614", 
+"Belgium;1;0;1752", 
+"Brazília;3;-1;1719", 
+"Chile;17;-3;1576", 
+"Dánia;14;-1;1584", 
+"Franciaország;2;1;1725", 
+"Hollandia;13;3;1586", 
+"Horvátország;8;-1;1625", 
+"Kolumbia;9;-1;1622", 
+"Mexikó;12;0;1603", 
+"Németország;16;-1;1580", 
+"Olaszország;15;1;1583", 
+"Peru;19;0;1551", 
+"Portugália;5;1;1643", 
+"Spanyolország;7;2;1631", 
+"Svájc;11;0;1604", 
+"Svédország;18;0;1560", 
+"Szenegál;20;0;1546", 
+"Uruguay;6;-1;1639"
+];
+
+//0. feladat - Objektum típusú tömb készítése
+function Objektumfeltolto(FeltoltendoElem){
+const beolvasottAdatok=[];
+for (let i=0;i<FeltoltendoElem.length;i++){
+	let objectum={};
+	let daraboltAdatsor=FeltoltendoElem[i].split(';');
+ 	objectum.nev=daraboltAdatsor[0];
+    objectum.helyezes=daraboltAdatsor[1];
+    objectum.valtozas=daraboltAdatsor[2];
+    objectum.pont=daraboltAdatsor[3];
+    beolvasottAdatok.push(objectum); 
+	}
+    return beolvasottAdatok;
+}
+const Fifa=Objektumfeltolto(csapatAdat);
+//0.5. feladat - Kiiratas tablazatban
+function TablazatKeszito(TablaAdat){
+document.write (`<table border = 1>`);
+document.write (`<th>Nev</th><th>Helyezes</th><th>Valtozas</th><th>Pont</th>`);
+	for (let i=0;i<TablaAdat.length;i++){
+    document.write (`<tr><td>${TablaAdat[i].nev}</td><td>${TablaAdat[i].helyezes}</td><td>${TablaAdat[i].valtozas}</td><td>${TablaAdat[i].pont}</td></tr>`);
+    }
+document.write ("</table>");
+}
+TablazatKeszito(Fifa);
+
+//1. feladat - Mennyi a ranglistán szereplő csapatok száma
+function Osszegzes (VizsgaltTomb){
+document.write ("<hr>A ranglistan szereplo Csapatok szama: " +VizsgaltTomb.length);
+}
+Osszegzes (Fifa);
+
+//2. feladat - Mennyi a ranglistán lévő csapatok átlag pontszáma
+
+function Atlag (VizsgaltTomb){
+let atlag=0;
+	for (let i=0;i<VizsgaltTomb.length;i++){
+    atlag+=Number(VizsgaltTomb[i].pont);
+    }
+    return atlag/VizsgaltTomb.length;
+}
+document.write("<br>A ranglistan szereplo Csapatok pontAtlaga: " +Atlag (Fifa));
+
+//3. feladat - Listázd ki azokat a csapatokat akik az átlagnál több pontot értek el
+function AtlagFelett (VizsgaltTomb1){
+let PontAtlag=Atlag (VizsgaltTomb1);
+let AtlagFelettiek=[];
+for (let i=0;i<VizsgaltTomb1.length;i++){
+	if (VizsgaltTomb1[i].pont>PontAtlag){
+    AtlagFelettiek.push(VizsgaltTomb1[i].nev);
+    }
+}
+return AtlagFelettiek;
+}
+
+function ListaGenerator(listazandoAdatok){
+document.write("<ul>")
+for (let i=0;i<listazandoAdatok.length;i++){
+	document.write("<li>"+listazandoAdatok[i]+"</li>");
+    }
+document.write("</ul>");
+}
+
+
+let AtlagonFelul=AtlagFelett (Fifa);
+document.write("<br>A ranglistan szereplo Atlagpontszam feletti Csapatok: ");
+ListaGenerator(AtlagonFelul);
+
+//4. feladat - Írd ki a legtöbbet javító csapat adatait: Helyezés, CsapatNeve, Pontszám
+//Segítség: Maximum keresés index alapján
+
+function MaxIndeX(VizsgaltTomb){
+let maxindex=0;
+	for (let i=1;i<VizsgaltTomb.length;i++){
+    if (VizsgaltTomb[maxindex].valtozas<VizsgaltTomb[i].valtozas){
+    maxindex=i;
+    }
+    }
+return maxindex;
+}
+document.write("<br>A legtöbbet javító csapat adatai: "+ Fifa[MaxIndeX(Fifa)].nev+"<br> Helyezese: "+Fifa[MaxIndeX(Fifa)].helyezes+"<br> Valtozasai: "+Fifa[MaxIndeX(Fifa)].valtozas+"<br> Pontjai: "+Fifa[MaxIndeX(Fifa)].pont);
+
+//5. feladat - Szerepel-e magyaroszág a FIFA ranglistán??? true/false
+function SzerepelE(Keresendo, VizsgaltTomb ){
+for (let i=0;i<VizsgaltTomb.length;i++){
+	if (VizsgaltTomb[i].nev.includes(Keresendo)==true){
+    	return true;
+    }
+    else return false;
+}
+}
+document.write("<br>szerepele"+SzerepelE("Magyarorszag", Fifa ));
+
+function Eredmenykiirato(Vizsgalat, trueSzoveg, falseSzoveg){
+if (Vizsgalat==true){
+	document.write("<br>"+trueSzoveg);
+}
+else {
+ 	document.write("<br>"+falseSzoveg);
+}
+}
+
+Eredmenykiirato(SzerepelE("Magyarorszag", Fifa ), "<br>Magyarorszag Szerepel a FIFA ranglistán.", "<br>Magyarorszag NEM Szerepel a FIFA ranglistán.");
+//6. feladat - Statisztika, a változásokról, miből mennyi van
+//de csak azok szerepeljenek, ahol a változás mértéke legalább 2 szer előfordul
+
+function Statisztika(vizsgaltTomb)
+{
+	//Valtozas kivalogatasa
+	let statisztika=[];
+    for(let i=0;i<vizsgaltTomb.length;i++){
+    	let szerepelE=false;
+        for(let j=0;j<statisztika.length;j++){
+        	if(statisztika[j]==vizsgaltTomb[i].valtozas){
+            	szerepelE=true;
+            }
+        }
+        if(szerepelE==false){
+        	statisztika.push(vizsgaltTomb[i].valtozas);
+        }
+    }
+    //Valtozas sorba rendezese
+    statisztika.sort();
+    //Segédtömb létrehozás és feltöltés
+    let statisztikaSeged=[];
+    for(let i=0;i<statisztika.length;i++){
+    	statisztikaSeged.push(0);
+    }
+    //Kiválogatott valtozasok megszámlálása
+    for(let i=0;i<vizsgaltTomb.length;i++){
+        for(let j=0;j<statisztika.length;j++){
+        	if(statisztika[j]==vizsgaltTomb[i].valtozas){
+            	 statisztikaSeged[j]++;
+            }
+        }
+    }
+    //Eredmény megjelenítése
+    document.write("<hr>Statisztika:");
+    for(let i=0;i<statisztika.length;i++){
+    if (statisztikaSeged[i]>2){
+   		document.write("<br>"+statisztika[i]+":"+statisztikaSeged[i]); }
+    }
+}
+Statisztika(Fifa);
+
+</script>
+

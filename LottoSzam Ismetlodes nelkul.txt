@@ -1,0 +1,29 @@
+<script>
+//lottoszamgenerator
+//while ciklussal
+//csak akkor generaljon ha nem szerepelt
+//osszesen 5 szam kell
+
+function LottoSzam(){
+	let lottoSzamok=[];
+    for(let i=0;i<5;i++){
+	let RandomLottoSzam=(Math.round(Math.random()*89))+1;
+    let szerepelE=false;
+    for (let j=0;j<lottoSzamok.length;j++){
+    if (RandomLottoSzam==lottoSzamok[j]){
+    szerepelE=true;
+    }
+    }
+    if (szerepelE==false){
+    lottoSzamok.push(RandomLottoSzam);
+    }
+    else{
+    i--
+    }
+    }
+    return lottoSzamok;
+}
+
+document.write("Lotto Szamaink: "+LottoSzam());
+
+</script>

@@ -1,0 +1,14 @@
+<script>
+//fuggveny PARAMETERKENT a MEGADOK szazalek erteket es azzal ter vissza
+
+function SzazalekSzamitas(vizsgaltSzam,szazalekErteke){
+return vizsgaltSzam*szazalekErteke/100;
+}
+
+
+document.write("100-nak az 5%-a= "+SzazalekSzamitas(100,5));
+document.write("<br>65-nek az 10%-a= "+SzazalekSzamitas(65,10));
+document.write("<br>50-nek az 2%-a= "+SzazalekSzamitas(50,2));
+document.write("<br>50-nek az 15%-a= "+SzazalekSzamitas(50,15));
+</script>
+

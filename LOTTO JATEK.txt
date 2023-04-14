@@ -1,0 +1,51 @@
+<script>
+//ToDo: else ag kiiratasainak finomitasa
+
+
+function LottoSzam(){
+	let RandomLottoSzam=(Math.round(Math.random()*89))+1;
+    return RandomLottoSzam;
+}
+
+function Winner(a){
+	let win=0;
+		for (let i=0;i<tomb.length;i++){
+        	if (tomb[i]==a){
+            win++;
+            document.write(`The ${tomb[i]} LOTTO number and your number ${a} matches!<br>`);
+            }
+            else {
+            document.write(`The ${tomb[i]} LOTTO number and your number ${a} doesnt match!<br>`);
+            }
+        }
+        document.write(`You have ${win} matches!<br>`);
+       
+}
+
+
+let frst=Number(prompt("Please tipe your first LOTTO number"));
+let scnd=Number(prompt("Please tipe your second LOTTO number"));
+let thrd=Number(prompt("Please tipe your third LOTTO number"));
+let frth=Number(prompt("Please tipe your fourth LOTTO number"));
+let ffth=Number(prompt("Please tipe your fifth LOTTO number"));
+
+let tomb=[];
+
+for (let i=0;i<5;i++){
+	tomb.push(LottoSzam());
+    }
+
+for (let i=0;i<5;i++){
+	document.write(`The ${i+1}. LOTTO number is ${tomb[i]} <br>`);;
+    }
+document.write(`<hr>Your LOTTO numbers are: <br> ${frst}, ${scnd}, ${thrd}, ${frth}, ${ffth}<br><hr>`);
+Winner(frst);
+Winner(scnd);
+Winner(thrd);
+Winner(frth);
+Winner(ffth);
+
+
+
+</script>
+

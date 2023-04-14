@@ -1,0 +1,121 @@
+<script>
+let szoveg="Szeretem a programozast";
+document.write("chArt() -kiiratom az adott szoveg x. indexenek karakteret:");
+//charAt - kiirja az adott szoveg X. indexenek karatkeret
+let adottKartakter1=szoveg.charAt(0);
+let adottKartakter2=szoveg.charAt(7);
+let adottKartakter3=szoveg.charAt(11);
+let adottKartakter4=szoveg.charAt(3);
+
+document.write("<br>"+adottKartakter1);
+document.write("<br>"+adottKartakter2);
+document.write("<br>"+adottKartakter3);
+document.write("<br>"+adottKartakter4);
+document.write("<hr>");
+
+// concat() - hozzafuz egy karakterlancot a szovegunkhoz
+document.write("concat() - hozzafuz egy karakterlancot a szovegunkhoz:");
+let ujSzoveg=szoveg.concat(", mert az annyira konnyu");
+document.write("<br>"+ujSzoveg);
+document.write("<hr>");
+
+//includes() =keresunk egy adott karakterlancot a szovegyunkben TRUE OR FALSE-ot ad vissza
+document.write("includes() - keresunk egy adott karakterlancot a szovegyunkben TRUE OR FALSE-ot ad vissza: ");
+let keresese1=szoveg.includes("programozast");
+document.write("<br>"+keresese1);
+let keresese2=szoveg.includes("konnyu");
+document.write("<br>"+keresese2);
+document.write("<hr>");
+
+//indexOf() - adott kifejezes karakterenek indexet adja vissza
+document.write("indexOf() - adott kifejezes karakterenek indexet adja vissza");
+let keresesIndex=szoveg.indexOf("programozas");
+document.write("<br>"+keresesIndex);
+let keresesIndex1=szoveg.indexOf("cica");
+document.write("<br>"+keresesIndex1);
+document.write("<hr>");
+// ha nincs benne, akkor -1 mert a szovegen kivulre mutat
+
+//length - tulajdonsag az adott STRING hosszat adja vissza
+document.write("length - tulajdonsag az adott STRING hosszat adja vissza:");
+document.write("<br>A minta szoveg hossza: "+szoveg.length+" karakter.");
+document.write("<hr>");
+
+//replace() - kicserel egy karakter lancot egy helyen
+//replaceAll() - kicserel egy karakter lancot az osszes talalat helyen
+document.write("replace() - kicserel egy karakter lancot egy helyen <br> replaceAll - kicserel egy karakter lancot az osszes talalat helyen:");
+let cicaSzoveg=szoveg.replace("programozast", "cicakat");
+document.write("<br>"+szoveg+" -helyett:");
+document.write("<br>"+cicaSzoveg);
+document.write("<br>"+szoveg+" -helyett:");
+let mertSajt=szoveg.replace("programozast", "disznosajtot");
+document.write("<br>"+mertSajt);
+let nemSzeret=szoveg.replace("Szeretem", "Utalom");
+document.write("<br>"+szoveg+" -helyett:");
+document.write("<br>"+nemSzeret);
+document.write("<br>"+szoveg+" -helyett ReplaceAll:");
+let NemTudom=szoveg.replaceAll("Szeretem a programozast", "Nemtudom Micsoda");
+document.write("<br>"+NemTudom);
+document.write("<hr>");
+
+
+//repeat()- megismetel egy adott karakterlancot
+document.write("repeat()megismetel egy adott karakterlancot<br>");
+let ismeteltSzoveg=szoveg.repeat(3);
+document.write(ismeteltSzoveg);
+document.write("<hr>");
+
+//substb()- kivag egy adott szoveget a karakterlacbol
+document.write("substb()- kivag egy adott szoveget a karakterlacbol:");
+let kivagottSzoveg=szoveg.substr(11,11);//11. karaktertol 11 karakter hosszan vagja ki
+document.write("<br>"+kivagottSzoveg);
+//substring()- kivag egy adott szoveget a karakterlacbol
+document.write("<br>substring()- kivag egy adott szoveget a karakterlacbol:");
+let kivagottSzoveg1=szoveg.substring(0,8);//0. indextol 8. indexig
+document.write("<br>"+kivagottSzoveg1);
+
+//slice()- kivag egy adott szoveget a karakterlacbol
+document.write("<br>slice()- kivag egy adott szoveget a karakterlacbol:");
+let kivagottSzoveg2=szoveg.slice(8);//Az adott (8) elemet vagja le a szoveg elejerol
+document.write("<br>"+kivagottSzoveg2);
+document.write("<hr>");
+
+//split() - feldarabol egy karakterlancot adott karakter alapjan, es tombbe helyezi oket
+document.write("split()- feldarabol egy karakterlancot adott karakter alapjan, es tombbe helyezi oket:");
+let darabolandoSzoveg="alma;korte;szilva;birs";
+let daraboltSzoveg=(darabolandoSzoveg.split(';'));
+document.write("<br>"+daraboltSzoveg);
+
+document.write("<br>A kedvenc gyumolcseim a(z)");
+for (let i=0;i<daraboltSzoveg.length;i++){
+	document.write (daraboltSzoveg[i]+" es a ");
+}
+document.write("<hr>");
+//join() - a meglevo tomb tartalmabol karakterlancot keszit
+document.write("join() - a meglevo tomb tartalmabol karakterlancot keszit:<br>");
+let daraboltSzovegV2=["IronMan", "Hulk", "Thor", "HawkEye", "BlackWidow"];
+let tombSzoveg=daraboltSzovegV2.join();
+document.write(tombSzoveg);
+document.write("<hr>");
+
+//toUpperCase() - NAGYBETUSSE alakitja a szoveget
+document.write("toUpperCase() - NAGYBETUSSE alakitja a szoveget:<br>");
+let nagybetusSzoveg=szoveg.toUpperCase();
+document.write(nagybetusSzoveg);
+
+
+//toLowerCase() - kisbetusse alakitja a szoveget
+document.write("<br>toLowerCase() - kisbetusse alakitja a szoveget:<br>");
+let kisbetusSzoveg=szoveg.toLowerCase();
+document.write(kisbetusSzoveg);
+document.write("<hr>");
+
+//trim(), trimStart(), trimEnd() - levagja a felesleges szokozoket a kifejezesrol
+document.write("trim(), trimStart(), trimEnd()- levagja a felesleges szokozoket a kifejezesrol:<br>");
+let felesleges="       helllo world!!!!!    ";
+let trimmeltElem=felesleges.trim();
+document.write(felesleges +"<br>Helyett:<br>");
+document.write(trimmeltElem);
+document.write("A felesleges szokozok elotte es utanna eltuntek");
+
+</script>

@@ -1,0 +1,17 @@
+<script>
+
+function RandomSzamGeneralas(felso,also){
+	let RandomSzam=Math.round(Math.random()*(felso-also))+also;
+    return RandomSzam;
+}
+let szamFelso=Number(prompt("add meg a generalni kivant szamod felso hatarat: "));
+let szamAlso=Number(prompt("add meg a generalni kivant szamod also hatarat: "));
+
+document.write(`A generalt random szam a kovetkezo: ${RandomSzamGeneralas(szamFelso,szamAlso)}<br>`);
+document.write(`A generalt random szam a kovetkezo: ${RandomSzamGeneralas(100,120)}<br>`);
+document.write(`A generalt random szam a kovetkezo: ${RandomSzamGeneralas(77,200)}<br>`);
+document.write(`A generalt random szam a kovetkezo: ${RandomSzamGeneralas(33,59)}<br>`);
+document.write(`A generalt random szam a kovetkezo: ${RandomSzamGeneralas(55,90)}<br>`);
+
+</script>
+

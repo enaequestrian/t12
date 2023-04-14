@@ -1,0 +1,26 @@
+<script>
+//Feladat: Kör kerület terület függvény illetve eredmény megjelenítő eljárás
+//Feladat leírása: Készíts egy-egy függvényt/eljárást az adott munkafolyamatoknak
+//1-1 darab kerület és terület kiszámító függvény. KörKerület(), KörTerület()
+//1 darab eredmény megjelenítő függvény, aminek bemeneti paramétere egy magyarázó szövegés egy eredmény(változó lesz!)
+
+function KorKerulet(sugar){
+	let kerulet=2*sugar*Math.PI;
+    return kerulet;
+}
+
+function KorTerulet(sugar){
+	let terulet=Math.PI*sugar*sugar;
+    return terulet;
+}
+
+function KiIratas(magyarazoSzoveg,Eredmeny){
+	document.write("<br>"+magyarazoSzoveg+Eredmeny);
+}
+
+KiIratas("A Kor Kerulete: ", KorKerulet(5));
+KiIratas("A Kor Terulete: ", KorTerulet(32));
+
+
+
+</script>

@@ -1,0 +1,78 @@
+<script>
+function keszito(){
+	document.write(`Program keszitoje: Laczi Eniko<br>Junior Frontend es Webfejleszto<br>Team12`);
+}
+
+function hatvanyozo(a,b){
+	let hatvanyEredmeny=(a**b);
+    document.write(`<br>A(z) ${a}<sup>${b}</sup>=${hatvanyEredmeny}`);
+    return hatvanyEredmeny;
+}
+
+function parosLetrehoz(also,felso){
+		let ParosSzam=(Math.round(Math.random()*(felso-also)+also));
+        	if (ParosSzam%2==0){
+            	document.write(`<br>A random generalt paros szamunk a(z): ${ParosSzam}`);
+                }
+            else {
+            document.write("<br>A random generalt paros szamunk a(z): "+(ParosSzam+1));
+            }
+       return ParosSzam;
+            
+}
+
+function testTomegIndex(suly, magassag){
+
+		let TTI=suly/(magassag*magassag);
+
+        	if (TTI<16){
+            	document.write("<br>sulyosSovanysag");
+                }
+            else if (TTI<17){
+            	document.write("<br>mersekeltSovanysag");
+                }
+            else if (TTI<18.5){
+            	document.write("<br>enyheSovanysag");
+                }
+            else if (TTI<25){
+            	document.write("<br>normalisTestsuly");
+                }
+            else if (TTI<30){
+            	document.write("<br>tulsulyos");
+                }
+            else if (TTI<35){
+            	document.write("<br>IfokuElhizas");
+                }
+            else if (TTI<40){
+            	document.write("<br>IIfokuElhizas");
+                }
+            else {
+            	document.write("<br>IIIfokuSulyosElhizas");
+                }
+}
+
+
+function egeszOsztoE(szam,oszto){
+	if (szam%oszto==0){
+    document.write("<br>"+true);
+    }
+    else {
+    document.write("<br>"+false);
+    }
+}
+
+keszito();
+document.write(`<hr>Az elso feladat probaja:`);
+hatvanyozo(2,3);
+hatvanyozo(5,3);
+document.write(`<hr>A masodik feladat probaja:`);
+parosLetrehoz(1,100);
+document.write(`<hr>A harmadik feladat probaja:`);
+testTomegIndex(200,2);
+testTomegIndex(45,1.5);
+testTomegIndex(25,1.2);
+document.write(`<hr>A negyedik feladat probaja:`);
+egeszOsztoE(25,5);
+egeszOsztoE(1050,7);
+egeszOsztoE(2048,3);
+</script>

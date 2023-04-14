@@ -1,0 +1,130 @@
+<script>
+const Dolgozok = [{
+        nev: "Koaxk Ábel",
+        kor: 23,
+        fizetes: 400000,
+        beosztas: "Rendszergazda"
+    },
+    {
+        nev: "Zsíros B. Ödön",
+        kor: 45,
+        fizetes: 1200000,
+        beosztas: "Ügyvezető Igazgató"
+    },
+    {
+        nev: "Meg Győző",
+        kor: 32,
+        fizetes: 600000,
+        beosztas: "Marketing Manager"
+    },
+    {
+        nev: "Békés Csaba",
+        kor: 63,
+        fizetes: 180000,
+        beosztas: "Takarító"
+    },
+    {
+        nev: "Pofá Zoltán",
+        kor: 25,
+        fizetes: 300000,
+        beosztas: "Biztonsági Őr"
+    },
+    {
+        nev: "Fejet Lenke",
+        kor: 22,
+        fizetes: 220000,
+        beosztas: "Irodai Titkár"
+    },
+    {
+        nev: "Vak Cina",
+        kor: 30,
+        fizetes: 500000,
+        beosztas: "Üzem Orvos"
+    }
+];
+
+
+function hosszEllenor(BemenetiSzoveg){
+if (BemenetiSzoveg.length<=8){
+	return false;
+}
+else return true;
+}
+document.write(`Az elso feladat tesztje: <br>`+hosszEllenor("teszt")+ `<br>` +hosszEllenor("feladatteszt"));
+
+function tajSzamEllenor(TajSzam){
+if (TajSzam.length==9){
+	let a=((TajSzam[0]+TajSzam[2]+TajSzam[4]+TajSzam[6])*7);
+    let b=((TajSzam[1]+TajSzam[3]+TajSzam[5]+TajSzam[7])*3);
+if ((a+b)%10==TajSzam[8]){
+ return true;
+}
+else {return false;}
+}}
+
+document.write("<hr>A masodik feladat tesztje:<br>"+ tajSzamEllenor("040655330")+"<br>"+tajSzamEllenor("111111111")+"<br>"+tajSzamEllenor("037687210"));
+
+function tombTerjedelem(VizsgaltTomb){
+let MaxErtek=VizsgaltTomb[0];
+let Minertek=VizsgaltTomb[0];
+for (let i=0;i<VizsgaltTomb.length;i++){
+	if (MaxErtek<VizsgaltTomb[i]){
+    MaxErtek=VizsgaltTomb[i];
+    }
+}
+for (let i=0;i<VizsgaltTomb.length;i++){
+	if (Minertek>VizsgaltTomb[i]){
+    Minertek=VizsgaltTomb[i];
+    }
+}
+return MaxErtek-Minertek;
+}
+
+let vizsgalttombunk=[3,5,10,16,9];
+
+document.write("<hr>A harmadik feladat tesztje:<br>"+tombTerjedelem(vizsgalttombunk));
+
+function legidosebbDolgozo(Objectum){
+let maxIndex=0;
+for (let i=0;i<Objectum.length;i++){
+	if (Objectum[maxIndex].kor<Objectum[i].kor){
+    maxIndex=i;
+    }
+}
+return maxIndex;
+}
+document.write("<hr>A Negyedik feladat tesztje:<br>"+legidosebbDolgozo(Dolgozok));
+
+function atlagFizu(objectum){
+let osszeg=0;
+for (let i=0;i<objectum.length;i++){
+	osszeg+=objectum[i].fizetes;
+}
+return Math.round(osszeg/objectum.length);
+}
+
+document.write("<hr>A dolgozok Atlag fizetese:<br>"+atlagFizu(Dolgozok)+" FT");
+
+function FizuEmeles(VizsgaltObjectum){
+let AtlagFizetes=atlagFizu(VizsgaltObjectum);
+for (let i=0;i<VizsgaltObjectum.length;i++){
+	if(VizsgaltObjectum[i].fizetes<AtlagFizetes){
+    	VizsgaltObjectum[i].fizetes=Math.round(VizsgaltObjectum[i].fizetes*1.1);
+    }
+} 
+return VizsgaltObjectum;
+}
+
+function objektumKiirato(Megjelenitendo){
+	document.write("<table border=1>");
+    document.write("<tr><th>Név</th> <th>Kor</th> <th>Fizetés</th> <th>Beosztás</th></tr>");
+    for(let i=0;i<Megjelenitendo.length;i++){
+    document.write(`<tr><td>${Megjelenitendo[i].nev}</td>  <td>${Megjelenitendo[i].kor}</td>  <td>${Megjelenitendo[i].fizetes}</td>  <td>${Megjelenitendo[i].beosztas}</td></tr>`);
+    }
+    document.write("</table>");
+}
+objektumKiirato(Dolgozok);
+document.write("<hr>");
+objektumKiirato(FizuEmeles(Dolgozok));
+
+</script>

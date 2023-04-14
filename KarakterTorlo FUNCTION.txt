@@ -1,0 +1,35 @@
+<script>
+function ParosTorlo(szoveg){
+let ujszoveg="";
+for (let i=0;i<szoveg.length;i=i+2){
+    ujszoveg+=szoveg[i];
+    }
+  return ujszoveg;
+}
+
+document.write(ParosTorlo("M i n d e n m a s o d i k k i t o r l e s e"));
+document.write("<br>");
+function ParatlanTorlo(szoveg){
+let ujszoveg="";
+for (let i=1;i<szoveg.length;i=i+2){
+    ujszoveg+=szoveg[i];
+    }
+  return ujszoveg;
+}
+
+document.write(ParatlanTorlo(" M i n d e n p a r a t l a n t o r l e s e"));
+
+//let adottKartakter1=szoveg.charAt(0);
+
+function karaktertabusito(szoveg, tiltottkarakter){
+let ujszoveg="";
+	for(let i=0;i<szoveg.length;i++){
+    	if (szoveg[i]!=tiltottkarakter){
+        ujszoveg+=szoveg[i]
+        }
+    }
+    return ujszoveg;
+}
+document.write("<br>");
+document.write(karaktertabusito("szeretem a programozast", "e"));
+</script>

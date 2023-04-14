@@ -1,0 +1,17 @@
+<script>
+
+function LottoSzam(){
+	let RandomLottoSzam=(Math.round(Math.random()*89))+1;
+    return RandomLottoSzam;
+}
+
+document.write(`A generalt random elso lotto szam a kovetkezo: ${LottoSzam()}<br>`);
+document.write(`A generalt random masodik lotto szam a kovetkezo: ${LottoSzam()}<br>`);
+document.write(`A generalt random harmadik lotto szam a kovetkezo: ${LottoSzam()}<br>`);
+document.write(`A generalt random negyedik lotto szam a kovetkezo: ${LottoSzam()}<br>`);
+document.write(`A generalt random otodik lotto szam a kovetkezo:  ${LottoSzam()}<br>`);
+
+
+
+</script>
+

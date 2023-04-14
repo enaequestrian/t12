@@ -11,29 +11,29 @@ else if (TTI<17){
 document.write(`A ${TTI} testtomeg index alapjan te a mérsékelt sovány vagy`);
 }
 
-else if (TTI<18,49){
+else if (TTI<18.5){
 document.write(`A ${TTI} testtomeg index alapjan te a enyhe sovány vagy`);
 }
 
-else if (TTI<24,99){
+else if (TTI<25){
 document.write(`A ${TTI} testtomeg index alapjan te a normális testsúlyu vagy`);
 }
 
-else if (TTI<29,99){
+else if (TTI<30){
 document.write(`A ${TTI} testtomeg index alapjan te a túlsúlyos vagy`);
 }
 
-else if (TTI<34,99){
+else if (TTI<35){
 document.write(`A ${TTI} testtomeg index alapjan te a I. fokú elhízásban szenvedsz`);
 }
 
-else if (TTI<39,99){
+else if (TTI<40){
 document.write(`A ${TTI} testtomeg index alapjan te a II. fokú elhízásban szenvedsz`);
 }
 
-else if (TTI>40){
+else {
 document.write(`A ${TTI} testtomeg index alapjan te a III. fokú (SULYOS) elhízásban szenvedsz`);
 }
 
-document.write (`A ${magassag} cm es ${testtomeg} kg alapjan ennyi a testtomeg indexed: ${TTI}`);
+document.write (`A ${magassag} m es ${testtomeg} kg alapjan ennyi a testtomeg indexed: ${TTI}`);
 </script>

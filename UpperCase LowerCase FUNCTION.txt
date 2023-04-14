@@ -1,0 +1,36 @@
+<script>
+function CapitaliseV1(szoveg){
+let nagyKezdobetusSzoveg="";
+	for(let i=0;i<szoveg.length;i++){
+    if(i==0){
+    nagyKezdobetusSzoveg+=szoveg[0].toUpperCase();
+    }
+    else {
+    nagyKezdobetusSzoveg+=szoveg[i].toLowerCase();
+    }
+    }
+    return nagyKezdobetusSzoveg;
+}
+
+
+function CapitaliseV2(szoveg){
+let nagyKezdobetusSzoveg=szoveg[0].toUpperCase();
+	for(let i=1;i<szoveg.length;i++){
+    nagyKezdobetusSzoveg+=szoveg[i].toLowerCase();
+    }
+    return nagyKezdobetusSzoveg;
+}
+
+document.write(CapitaliseV1("eNikOcsKe<br>"));
+document.write(CapitaliseV2("mostmitIRJAKAHOZHOGY"));
+
+
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,15 @@
+<script>
+function teglalap(a,b){
+	terulet=a*b;
+    kerulet=2*(a+b);
+    document.write(` A(z) ${a} es ${b} oldalu teglalap terulete=${terulet}, kerulete=${kerulet}<br>`);
+    }
+
+teglalap(5,2);
+teglalap(10,2);
+teglalap(2,1);
+
+
+
+</script>
+

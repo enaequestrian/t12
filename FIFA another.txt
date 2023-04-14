@@ -1,0 +1,105 @@
+<script>
+const csapatAdat = [
+"Anglia;4;0;1662", 
+"Argentína;10;0;1614", 
+"Belgium;1;0;1752", 
+"Brazília;3;-1;1719", 
+"Chile;17;-3;1576", 
+"Dánia;14;-1;1584", 
+"Franciaország;2;1;1725", 
+"Hollandia;13;3;1586", 
+"Horvátország;8;-1;1625", 
+"Kolumbia;9;-1;1622", 
+"Mexikó;12;0;1603", 
+"Németország;16;-1;1580", 
+"Olaszország;15;1;1583", 
+"Peru;19;0;1551", 
+"Portugália;5;1;1643", 
+"Spanyolország;7;2;1631", 
+"Svájc;11;0;1604", 
+"Svédország;18;0;1560", 
+"Szenegál;20;0;1546", 
+"Uruguay;6;-1;1639"
+];
+
+//0. feladat - Objektum típusú tömb készítése
+//1. érték: Csapat neve (nev)
+//2. érték: Csapat helyezése (helyezes)
+//3. érték: Csapat helyének változása (valtozas)
+//4. érték: Csapat Pontszama (pont)
+
+function TombTolto(vizsgaltTomb){
+ const BeolvasottAdatok=[];
+ for (let i=0;i<vizsgaltTomb.length;i++){
+ 	let Objektum={};
+    let daraboltAdatsor=vizsgaltTomb[i].split(';');
+    Objektum.nev=daraboltAdatsor[0];
+    Objektum.helyezes=daraboltAdatsor[1];
+    Objektum.valtozas=daraboltAdatsor[2];
+    Objektum.pont=daraboltAdatsor[3];
+    BeolvasottAdatok.push(Objektum);
+ }
+return BeolvasottAdatok;
+}
+
+
+let Fifa=TombTolto(csapatAdat);
+
+function TablazatKiiratas(KiiratottTomb){
+document.write("<table border=1>");
+document.write("<tr><th>Nev</th><th>Helyezes</th><th>Valtozas</th><th>Pont</th><tr>");
+	for (let i=0;i<KiiratottTomb.length;i++){
+		document.write("<tr><td>"+KiiratottTomb[i].nev+"</td><td>"+KiiratottTomb[i].helyezes+"</td><td>"+KiiratottTomb[i].valtozas+"</td><td>"+KiiratottTomb[i].pont+"</td>");
+	}
+document.write("</table>");
+}
+
+TablazatKiiratas(Fifa);
+//1. feladat - Mennyi a ranglistán szereplő csapatok száma
+document.write("<hr>A ranglistán szereplő csapatok száma: "+Fifa.length);
+//2. feladat - Mennyi a ranglistán lévő csapatok átlag pontszáma
+
+function AtlagPontszam(vizsgaltTomb){
+	let Osszeg=0;
+    for (let i=0;i<vizsgaltTomb.length;i++){
+     Osszeg=Osszeg+Number(vizsgaltTomb[i].pont);
+    }
+    let atlag=Math.round(Osszeg/vizsgaltTomb.length);
+    return atlag;
+}
+document.write("<br>A ranglistán szereplő csapatok átlag pontszáma: "+AtlagPontszam(Fifa));
+//3. feladat - Listázd ki azokat a csapatokat akik az átlagnál több pontot értek el
+
+function AtlagFelett(){
+let atlagPont=AtlagPontszam(Fifa)
+document.write("<ul>");
+	for (let i=0;i<Fifa.length;i++){
+    	if (Fifa[i].pont>atlagPont){
+        document.write("<li>"+Fifa[i].nev+"</li>");
+        }
+    }
+    document.write("</ul>");
+}
+document.write("<br>Az atlagon feluli csapatok listaja:");
+AtlagFelett();
+
+//4. feladat - Írd ki a legtöbbet javító csapat adatait: Helyezés, CsapatNeve, Pontszám
+//Segítség: Maximum keresés index alapján
+
+function Javito(){
+let MaxIndex=0;
+let MaxErtek=Fifa[0].valtozas;
+	for (let i=0;i<Fifa.length;i++){
+    	if (MaxErtek<Fifa[i].valtozas){
+        	MaxErtek=Fifa[i].valtozas;
+            MaxIndex=i;
+        }
+    }
+document.write("A legtobbet javito csapat adatai: <br>Neve: "+Fifa[MaxIndex].nev+" Helyezese: "+Fifa[MaxIndex].helyezes+" Valtozasa: "+Fifa[MaxIndex].valtozas+" Pontszama: "+Fifa[MaxIndex].pont);
+}
+
+Javito();
+
+
+
+</script>

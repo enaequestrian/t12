@@ -1,0 +1,40 @@
+<script>
+//fuggveny PARAMETERKENT a MEGADOK szazalek erteket es azzal ter vissza
+
+function SzazalekSzamitas(vizsgaltSzam,szazalekErteke){
+return vizsgaltSzam*szazalekErteke/100;
+}
+
+document.write("100-nak az 5%-a= "+SzazalekSzamitas(100,5));
+document.write("<br>65-nek az 10%-a= "+SzazalekSzamitas(65,10));
+document.write("<br>50-nek az 2%-a= "+SzazalekSzamitas(50,2));
+document.write("<br>50-nek az 15%-a= "+SzazalekSzamitas(50,15));
+
+//masfele
+function Szazalek(ertek,szazalek){
+	let ujErtek=(ertek/100)*szazalek;
+	return ujErtek;
+}
+
+document.write("<br>100-nak az 200%-a= "+Szazalek(100,200));
+document.write("<br>125-nak az 50%-a= "+Szazalek(125,50));
+document.write("<br>65-nak az 10%-a= "+Szazalek(65,10));
+
+//elso X szam atlaga
+//parameter hany szam atlagat keri
+//lefut a parameterig
+//kiadja a szamok atlagat
+
+function Atlag(meret){
+	let osszeg=0;
+    for (let i=1;i<=meret;i++){
+    	osszeg+=i;
+    }
+    return osszeg/meret;
+}
+
+document.write("<br>atlagszamitas= "+Atlag(10));
+document.write("<br>atlagszamitas= "+Atlag(3));
+document.write("<br>atlagszamitas= "+Atlag(1000));
+</script>
+

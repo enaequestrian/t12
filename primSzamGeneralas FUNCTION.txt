@@ -1,0 +1,42 @@
+<script>
+//Feladat: Prím-e függvény illetve egy eredmény megjelenítő eljárás
+//Készíts egy PrimE() nevű függvényt, ami visszad egy logikai értéket, hogy a vizsgált szám prím-e...
+//ha prím-->true
+//ha nem prím ---> false
+//Illetve készíts egy eredmény megjelenítő eljárás, logika paraméterrel, ami érték függően, más-más más 
+//"szöveget" jelenít meg...
+//ha az érték true -->"A szám prím"
+//ha az érték false -->"A szám nem prím"
+
+function PrimE(ertek){
+	let oszto=0;
+for (let i=1; i<=ertek; i++){
+	if (ertek%i==0){
+	oszto++;
+	}
+}
+if (oszto==2){
+return true;
+}
+else {
+return false;
+}
+    }
+
+
+
+
+
+function KiIratas(generalas, trueSzoveg, falseSzoveg){
+	if (generalas==true){
+    return trueSzoveg;
+    }
+    else {
+    return falseSzoveg;
+    }
+}
+let RandomGenSzam=Math.round(Math.random()*(100-1)+1);
+document.write("A generalt random szamunk :"+RandomGenSzam);
+document.write(KiIratas(PrimE(RandomGenSzam), "<br>A generalt szamunk PRIM", "<br>A generalt szamunk NEM PRIM"))
+
+</script>

@@ -1,0 +1,60 @@
+<script>
+function tombfeltolto(meret,alsoHatar,felsoHatar){
+	let tomb=[];
+    	for (let i=0;i<meret;i++){
+        	tomb.push(Math.round(Math.random()*(felsoHatar-alsoHatar))+alsoHatar);
+        }
+    return tomb;
+}
+
+let tombA=tombfeltolto(3,20,50);
+let tombB=tombfeltolto(3,15,80);
+document.write(tombA+"<br>");
+document.write(tombB+"<br>");
+function UNIO(vizsgaltTomb){
+	let Unio=[];
+	for (let i=0;i<vizsgaltTomb.length;i++){
+	let szerepelE=false;
+    	for (let j=0;j<Unio.length;j++){
+    	if (vizsgaltTomb[i]==Unio[j]){
+        	szerepelE=true;
+        }
+    	}
+        if (szerepelE==false){
+        	Unio.push(vizsgaltTomb[i]);
+            }
+	}
+   return Unio;
+}
+let unio=UNIO(tombA)+UNIO(tombB);
+document.write("A ket tomb unioja: "+unio+"<br>");
+
+
+
+
+
+//Metszet, tombA,tombB
+let metszet=[];
+for (let i=0;i<tombA.length;i++)
+{
+		for (let j=0;j<tombB.length;j++){
+        	if (tombA[i]==tombB[j])
+            {
+            let szerepelE=false;
+                	for (let k=0;k<metszet.length;k++)
+                    {
+                    if (tombA[i]==metszet[k]){
+                    szerepelE=true;
+                    }
+                    }
+              if (szerepelE==false){
+              metszet.push(tombA[i]);
+              }
+            }
+        }
+}
+
+
+document.write("A ket tomb metszete: "+metszet);
+
+</script>

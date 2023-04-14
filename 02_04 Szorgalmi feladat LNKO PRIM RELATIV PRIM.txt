@@ -1,0 +1,58 @@
+<script>
+//Próbálkozzatok meg a PrimE, LNKO és relatív prím kódok valamilyen mértékű optimalizálásáva 
+//(futási időre, vagy memória használatra)
+
+function LNKO(szam1,szam2){
+	let lnko=1;
+    for (let i=2;i<=szam1;i++){
+    	if (szam1%i==0 && szam2%i==0){
+        lnko=i;
+        }
+    } 
+    return lnko;
+}
+
+document.write("Szorgalmi feladat - LNKO, Prim Szam es Relativ Prim szam optimalizalasa <hr>");
+document.write("Legnagyobb Kozos Oszto:<br>");
+document.write("A 6 es 9 szamok legnagyobb kozos osztoja: "+LNKO(6,9));
+document.write("<br>A(z) 10 es 20 szamok legnagyobb kozos osztoja: "+LNKO(10,20));
+document.write("<br>A(z) 15 es 43 szamok legnagyobb kozos osztoja: "+LNKO(43,15));
+document.write("<br>A(z) 34 es 26 szamok legnagyobb kozos osztoja: "+LNKO(34,26)+"<hr>");
+
+function primE(vizsgaltSzam){
+	let oszto=0;
+	for (let i=1;i<=vizsgaltSzam;i++){
+    if (vizsgaltSzam%i==0){
+    oszto++;
+    }
+    }
+    if (oszto==2){
+    document.write(`A(z) ${vizsgaltSzam} szam PRIM szam<br>`);
+    }
+    else {
+    document.write(`A(z) ${vizsgaltSzam} szam NEM PRIM szam<br>`);
+    }
+    }
+document.write("Prim szam vizsgalat:<br>");
+primE(3);
+primE(21);
+primE(7);
+primE(12);
+
+function relativPrim(vizsgaltSzam1,vizsgaltSzam2){
+	if (LNKO(vizsgaltSzam1,vizsgaltSzam2)==1){
+     	document.write(`<br>A(z) ${vizsgaltSzam1} es ${vizsgaltSzam2} szamok Relativ Prim szamnak minosulnek!`);
+    }
+    else {
+    	document.write(`<br>A(z) ${vizsgaltSzam1} es ${vizsgaltSzam2} szamok NEM minosulnek Relativ Prim szamnak`);
+    }
+}
+
+document.write("<hr>Relativ prim szam vizsgalat:");
+relativPrim(43,15);
+relativPrim(8,10);
+relativPrim(37,19);
+relativPrim(62,44);
+
+
+</script>

@@ -1,0 +1,46 @@
+<script>
+//Feladat: Tömbgenerátor
+//Feladat leírása: Készíts egy függvényt ami random számogat generál, paraméterként kapott mennyiségben
+//Paraméterként kapott alsó és felsőhatár között, és ezeket egy tömbbe tölti fel, majd adja vissza az értékét.
+
+function RandomSzamGeneralas(alsoHatar,felsoHatar){
+	let RandomSzam=Math.round(Math.random()*(felsoHatar-alsoHatar))+alsoHatar;
+    return RandomSzam;
+}
+
+function TombGeneralas(meret, also, felso){
+	let tomb=[];
+		for (let i=0;i<meret;i++){
+        	tomb.push(RandomSzamGeneralas(also,felso));
+        }
+        return tomb;
+}
+document.write(TombGeneralas(10, 30, 50));
+document.write("<hr>");
+
+//Feladat: Összegzés tétele Függvény és eljárás
+//Feladat leírása: Készíts egy függvényt/eljárást ami visszaadja/kiírja 
+//a paraméterként kapott tömbben található elemek összegét!
+
+function Osszegzes(tomb){
+	let osszeg=0;
+	for (let i=0;i<tomb.length;i++){
+    	osszeg=osszeg+tomb[i];
+    }
+    return osszeg;
+}
+
+document.write("A generalt tomb osszege: "+Osszegzes(TombGeneralas(10, 30, 50)));
+//Tétel: Átlagszámítás tétele
+//Eredménye:Megszámolja egy adott tömb elemeinek az átlagát
+
+function atlagSzamitas(tomb){
+	let osszeg=0;
+	for (let i=0;i<tomb.length;i++){
+    	osszeg=osszeg+tomb[i];
+    }
+    return osszeg/tomb.length;
+}
+
+document.write("<br>A generalt tomb atlaga: "+atlagSzamitas(TombGeneralas(10, 30, 50)));
+</script>
